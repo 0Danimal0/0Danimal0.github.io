@@ -1,17 +1,16 @@
-
+//Model
 
 var bio = {
     "name": "Daniel Alpers",
     "role": "Front End Developer",
     "contacts": {
-        "mobile": "(777) 777-9999",
-        "email": "dan.alpers@ghengis.com",
-        "github": "DA",
-        "twitter": "@DanTheMan",
+        "mobile": "(480) 980-8096",
+        "email": "dan.alpers@gmail.com",
+        "github": "0Danimal0",
         "location": "Scottsdale, Az"
     },
     "welcomeMessage": "I would love to help your team achieve success.",
-    "skills": ["JQuery", "HTML5", "CSS", "GIT", "Grunt", "Sketch", "Problem Solving"],
+    "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "CMS Design", "UX Experience",],
     "bioPic": "images/handball.jpg"
 }
 
@@ -20,7 +19,7 @@ var education = {
         "name": "Arizona State University",
         "location": "900 Cady Mall, Tempe, AZ 85287",
         "degree": "BS, Liberal Arts in Community Development",
-        "dates": 2011,
+        "dates": "2011",
         "major": ["Urban Planning & Design", "Economics"]
     }],
     "onlineEd": {
@@ -35,6 +34,7 @@ var education = {
 var work = {
     "jobs": [{
         "employer": "Vizzda: Commercial Real Estate Data",
+        "webSite": "https://vizzda.com/",
         "title": "User Manager",
         "dates": "4.5 years",
         "location": "501 S 48th St, Suite 110, Tempe, AZ 85281",
@@ -45,6 +45,7 @@ var work = {
                         architecture, data element utility."
     }, {
         "employer": "Levine Machine Development",
+        "webSite": "http://levinemachine.com/",
         "title": "Research Intern",
         "dates": "3.5 months",
         "location": "605 E Grant St, Phoenix, AZ 85004",
@@ -52,18 +53,27 @@ var work = {
                         building in downtown Phoenix. I managed his research into economic development \
                         financial devises in regards to case-law. This experience gave me an awareness for and strong \
                         opinions of interface design for information search."
+    }, {
+        "employer": "MT Chargot Building Company",
+        "webSite": "http://www.mtchargotbuilding.com/",
+        "title": "Finish Carpenter",
+        "dates": "3 years, seasonally",
+        "location": "22510 Hoover Rd, Warren, MI 48089",
+        "description": "Mark Chargot is a finish carpenter that practices his craft in historic neighborhood of Grosse \
+                        Point, Michigan. It was working with his crew of four highly skilled tradesman that I found an \
+                        affinity for focusing on small tasks in order to execute on large projects."
     }]
 }
 
 
 var projects = {
     "projects": [{
-        "title": "Content Management: Research & Redesign",
+        "title": "Vizzda Content Management: Research & Redesign",
         "dates": "2014-2015",
         "description": "User end content management system information architecture...",
         "images": ["images/editPage.jpg"]
     }, {
-        "title": "Customer end product",
+        "title": "Vizzda Customer End Product",
         "dates": "Throughout 2015",
         "description": "New product offering",
         "images": ["images/dailyFeed-Land.jpg", "images/propertyPage.jpg"]
@@ -73,9 +83,9 @@ var projects = {
 
 ////////////////////////////////////////////////
 
+//ViewModel
 
 //header//
-
 var displayHeader = function() {
 $("#header").prepend(HTMLheaderRole.replace("%data%","Front End Developer"))
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -92,7 +102,7 @@ $("#header").append(formattedWelcomeMsg);
 displayBioPic();
 
 
-//display your contact info, boy!//
+//Replace %data% placeholder with contact content from Model.
 bio.display = function() {
     if (bio.contacts) {
         var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
@@ -120,7 +130,7 @@ bio.displayContactsFooter = function() {
 bio.displayContactsFooter();
 
 
-//display your skills, boy!//
+//Replace %data% placeholder with skills content from Model.
 bio.displaySkills = function() {
     if(bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
@@ -144,12 +154,13 @@ bio.displaySkills();
 
 
 
-//display your work history, boy!//
+//Replace %data% placeholder with work experience content from Model.
 work.display = function() {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer); //employer
+    var formattedEmployerLink = HTMLworkEmployer.replace("#",work.jobs[job].webSite); //employer
+    var formattedEmployer = formattedEmployerLink.replace("%data%",work.jobs[job].employer); //employer
     var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title); //position
     $(".work-entry:last").append(formattedEmployer + formattedTitle); // concat of employer & position
 
@@ -167,7 +178,7 @@ work.display();  //call the displayWork() function//
 
 
 
-//display your projects, boy!//
+//Replace %data% placeholder with projects content from Model.
 projects.display = function() {
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
@@ -237,14 +248,14 @@ education.onlineEdDisplay = function() {
 education.onlineEdDisplay();
 
 
-$(document).click(function(loc) {  //log our click locations!//
+$(document).click(function(loc) {  //log our click locations!
     var x = loc.pageX;
     var y = loc.pageY;
     logClicks(x,y);
 });
 
 
-//This button changes the formate of your name to ±capitalize the last name.//
+//This button changes the format of your name to ±capitalize the last name.
 function inName(name) {
     var fullName = name.trim().split(" ");
     var first = fullName[0].slice(0,1).toUpperCase() + fullName[0].slice(1).toLowerCase();
