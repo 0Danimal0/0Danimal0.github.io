@@ -2,15 +2,15 @@
 
 var bio = {
     "name": "Daniel Alpers",
-    "role": "Front End Developer",
+    "role": "Front End Programmer",
     "contacts": {
         "mobile": "(480) 980-8096",
         "email": "dan.alpers@gmail.com",
         "github": "0Danimal0",
         "location": "Scottsdale, Az"
     },
-    "welcomeMessage": "I would love to help your team achieve success.",
-    "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "CMS Design", "UX Experience",],
+    "welcomeMessage": "Tageting an Entry-Level position in web development.",
+    "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
     "bioPic": "images/handball.jpg"
 }
 
@@ -19,13 +19,16 @@ var education = {
         "name": "Arizona State University",
         "location": "900 Cady Mall, Tempe, AZ 85287",
         "degree": "BS, Liberal Arts in Community Development",
-        "dates": "2011",
-        "major": ["Urban Planning & Design", "Economics"]
+        "dates": "2011 ",
+        "major": ["Urban Planning, focus on design & community engagement"],
+        "url": "https://geoplan.asu.edu/degree-programs/undergraduate-degrees/urban-planning"
     }],
     "onlineEd": {
         "title": "Front End Developer Nanodegree",
         "school": "Udacity",
-        "dates": "April to July, 2016",
+        "dates": "April to July, 2016 ",
+        "description": "Broad introduction to modern front end developer languages and tools. Education includes experience with HTML5, CSS, JavaScript, Python, Git / GitHub, AJAX, Google APIs, Responsive Design, \
+                        Grunt, HTML Canvas, website performance optimization, browser rendering optimization, and much more. ",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     }
 }
@@ -39,7 +42,7 @@ var work = {
         "dates": "4.5 years",
         "location": "501 S 48th St, Suite 110, Tempe, AZ 85281",
         "description": "Teammate and leader on operations side of the commercial real estate data SAAS product. \
-                        Responsibilities included customer management, data fascilitation, information design, social media \
+                        Responsibilities included customer service director, data fascilitation, information design, social media \
                         graphic designer, and user advocate on the product design team. Main responsibility as \
                         customer manager honed my sentivity for the users interaction with site design, information \
                         architecture, data element utility."
@@ -51,8 +54,8 @@ var work = {
         "location": "605 E Grant St, Phoenix, AZ 85004",
         "description": "Michael Levine of Levine Machine Development is a developer & conservationist of historic \
                         building in downtown Phoenix. I managed his research into economic development \
-                        financial devises in regards to case-law. This experience gave me an awareness for and strong \
-                        opinions of interface design for information search."
+                        financial devices in regards to case-law. This experience gave me an awareness for and strong \
+                        opinions of interface design for information search through using online government data tools."
     }, {
         "employer": "MT Chargot Building Company",
         "webSite": "http://www.mtchargotbuilding.com/",
@@ -74,10 +77,16 @@ var projects = {
         "images": ["images/editPage.jpg"]
     }, {
         "title": "Vizzda Customer End Product",
-        "dates": "Throughout 2015",
+        "dates": "2015",
         "description": "New product offering",
         "images": ["images/dailyFeed-Land.jpg", "images/propertyPage.jpg"]
-    }]
+    }, {
+        "title": "Udacity Arcade Game",
+        "dates": "2016",
+        "description": "Intoduction to Javascipt & HTML5 Canvas to make a frogger like 2d video game.",
+        "images": ["images/editPage.jpg"]
+    }
+  ]
 }
 
 
@@ -87,7 +96,7 @@ var projects = {
 
 //header//
 var displayHeader = function() {
-$("#header").prepend(HTMLheaderRole.replace("%data%","Front End Developer"))
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role))
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 }
 displayHeader();
@@ -208,7 +217,8 @@ education.display = function() {
     $("#education").append(HTMLschoolStart);
 
     var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
-    $(".education-entry:last").append(formattedSchoolName);
+    var formattedSchoolNameLink = formattedSchoolName.replace("#",education.schools[school].url);
+    $(".education-entry:last").append(formattedSchoolNameLink);
 
     var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
     $(".education-entry:last").append(formattedSchoolDegree);
@@ -233,7 +243,8 @@ education.onlineEdDisplay = function() {
     $("#education").append(HTMLonlineStart);
 
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineEd.title);
-        $(".onlineEd-entry:last").append(formattedOnlineTitle);
+        var formattedOnlineTitleLink = formattedOnlineTitle.replace("#", education.onlineEd.url);
+        $(".onlineEd-entry:last").append(formattedOnlineTitleLink);
 
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineEd.school);
         $(".onlineEd-entry:last").append(formattedOnlineSchool);
@@ -241,8 +252,8 @@ education.onlineEdDisplay = function() {
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineEd.dates);
         $(".onlineEd-entry:last").append(formattedOnlineDates);
 
-        var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineEd.url);
-        $(".onlineEd-entry:last").append(formattedOnlineURL);
+        var formattedOnlineDescription = HTMLonlineDesciption.replace("%data%", education.onlineEd.description);
+        $(".onlineEd-entry:last").append(formattedOnlineDescription);
   }
 }
 education.onlineEdDisplay();

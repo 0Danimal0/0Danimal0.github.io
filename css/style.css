@@ -63,6 +63,9 @@ h5 {
 
 }
 
+#role {
+  color: #fff;
+}
 
 .date-text {
   font-style: italic;
@@ -108,11 +111,11 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #dc7920;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #f5a623;
 }
 
 .white-text {
@@ -127,12 +130,16 @@ a {
 }
 
 .dark-gray {
-  background-color: #484848;
+  background-color: #2c2c2c;
+}
+
+.connect {
+  color: #2c2c2c;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #2c2c2c;
 }
 
 .flex-box {
