@@ -73,18 +73,32 @@ var projects = {
     "projects": [{
         "title": "Vizzda Content Management: Research & Redesign",
         "dates": "2014-2015",
-        "description": "User end content management system information architecture...",
-        "images": ["images/editPage.jpg"]
+        "description": "Tasked with designing much of the content management system used by the research team to populate \
+                        information on commercial real estate assets. Each property, title event, and event actor required \
+                        unique information architecture, yet speed and ease of use were essential business requirements.",
+        "images": ["images/cms_sample.jpg"],
+        "link": "https://vizzda.com/",
     }, {
         "title": "Vizzda Customer End Product",
         "dates": "2015",
-        "description": "New product offering",
-        "images": ["images/dailyFeed-Land.jpg", "images/propertyPage.jpg"]
+        "description": "User advocate on design team of a mapping interface that filtered real estate content. Specialized \
+                        in translating researched data assets into information stories to help achieve customer goal of \
+                        discovering comparable properties to validate property pricing targets. ",
+        "images": ["images/dailyFeed-Land.jpg", "images/propertyPage.jpg"],
+        "link": "https://vizzda.com/",
     }, {
-        "title": "Udacity Arcade Game",
+        "title": "Arcade Game: Udacity Project",
         "dates": "2016",
         "description": "Intoduction to Javascipt & HTML5 Canvas to make a frogger like 2d video game.",
-        "images": ["images/editPage.jpg"]
+        "images": ["images/arcade_game.jpg"],
+        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+    }, {
+        "title": "Neighborhood Map: Udacity Project",
+        "dates": "2016",
+        "description": "Utilize knockout.js to build a neighbood map using the Google Map API,\
+                       and maintain Model–View–Viewmodel development patter.",
+        "images": ["images/map-shot.jpg"],
+        "link": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
     }
   ]
 }
@@ -193,7 +207,8 @@ projects.display = function() {
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
-        $(".project-entry:last").append(formattedTitle);
+        var formattedTitleLink = formattedTitle.replace("#",projects.projects[project].link);
+        $(".project-entry:last").append(formattedTitleLink);
 
         var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
         $(".project-entry:last").append(formattedDates);
