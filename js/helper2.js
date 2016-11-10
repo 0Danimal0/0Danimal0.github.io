@@ -27,7 +27,8 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a id="" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImageContainerOpen = '<div class="row-lightbox"></div>';
+var HTMLprojectImage = '<a href="%data%" data-lightbox="%data%" data-title="My caption"><img src="%data%" width="107" height="75"></a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#"> %data%';
@@ -65,14 +66,12 @@ function initializeMap() {
     var locations = [];
     locations.push(bio.contacts.location);
 
-    /* iterates through school locations and appends each location to
-     the locations array. */
+    /* iterates through school locations, adds them to locations array*/
     education.schools.forEach(function(school){
       locations.push(school.location);
     });
 
-    /* iterates through work locations and appends each location to
-       the locations array. */
+    /* iterates through work locations, adds them to locations array. */
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
@@ -107,7 +106,13 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
+    self.openInfoWindow = function(marker, infoWindow){
+      if(infoWindow.marker != marker) {
+        infoWindow.marker = marker;
+      }
+    }
+
+    // Listens for a click on a marker and attaches that markers window.
     google.maps.event.addListener(marker, 'click', function() {
       self.openInfoWindow(this, infoWindow);
     });
@@ -136,20 +141,11 @@ function initializeMap() {
   and fires off Google place searches for each location
   */
   function pinPoster(locations) {
-
-    // creates a Google place search service object. PlacesService does the work of
-    // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
-
-    // Iterates through the array of locations, creates a search object for each location
       locations.forEach(function(place){
-      // the search request object
       var request = {
         query: place
       };
-
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
       service.textSearch(request, callback);
     });
   }
@@ -166,9 +162,6 @@ function initializeMap() {
 
 }
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);

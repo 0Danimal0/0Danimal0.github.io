@@ -76,7 +76,7 @@ var projects = {
         "description": "Tasked with designing much of the content management system used by the research team to populate \
                         information on commercial real estate assets. Each property, title event, and event actor required \
                         unique information architecture, yet speed and ease of use were essential business requirements.",
-        "images": ["images/cms_sample.jpg"],
+        "images": ["images/cms_base.jpg", "images/cms_contact_db.jpg"],
         "link": "https://vizzda.com/",
     }, {
         "title": "Vizzda Customer End Product",
@@ -84,7 +84,7 @@ var projects = {
         "description": "User advocate on design team of a mapping interface that filtered real estate content. Specialized \
                         in translating researched data assets into information stories to help achieve customer goal of \
                         discovering comparable properties to validate property pricing targets. ",
-        "images": ["images/dailyFeed-Land.jpg", "images/propertyPage.jpg"],
+        "images": ["images/map_full.jpg", "images/map_filter.jpg", "images/dailyFeed-Land.jpg"],
         "link": "https://vizzda.com/",
     }, {
         "title": "Arcade Game: Udacity Project",
@@ -97,7 +97,7 @@ var projects = {
         "dates": "2016",
         "description": "Utilize knockout.js to build a neighbood map using the Google Map API,\
                        and maintain Model–View–Viewmodel development patter.",
-        "images": ["images/map-shot.jpg"],
+        "images": ["images/map_app_shot.jpg"],
         "link": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
     }
   ]
@@ -206,20 +206,22 @@ projects.display = function() {
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
-        var formattedTitleLink = formattedTitle.replace("#",projects.projects[project].link);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        var formattedTitleLink = formattedTitle.replace("#", projects.projects[project].link);
         $(".project-entry:last").append(formattedTitleLink);
 
-        var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedDescription);
 
+
         if (projects.projects[project].images.length > 0) {
+          $(".project-entry:last").append(HTMLprojectImageContainerOpen);
             for (image in projects.projects[project].images) {
-                var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[image])
-                $(".project-entry:last").append(formattedImage);
+                var formattedImage = HTMLprojectImage.replace(/%data%/g, projects.projects[project].images[image])
+                $(".row-lightbox:last").append(formattedImage);
             }
         }
     }
@@ -274,23 +276,14 @@ education.onlineEdDisplay = function() {
 education.onlineEdDisplay();
 
 
-$(document).click(function(loc) {  //log our click locations!
-    var x = loc.pageX;
-    var y = loc.pageY;
-    logClicks(x,y);
-});
 
-
-//This button changes the format of your name to ±capitalize the last name.
+//Changes the format of the name to ±capitalize the last name.
 function inName(name) {
     var fullName = name.trim().split(" ");
     var first = fullName[0].slice(0,1).toUpperCase() + fullName[0].slice(1).toLowerCase();
     var last = fullName[1].toUpperCase();
     return first + " " + last;
 }
-
-
-$('#main').append(internationalizeButton);
 
 
 $("#mapDiv").append(googleMap);
