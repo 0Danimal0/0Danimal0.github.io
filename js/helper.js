@@ -28,7 +28,7 @@ var HTMLprojectTitle = '<a id="" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImageContainerOpen = '<div class="row-lightbox"></div>';
-var HTMLprojectImage = '<a href="%data%" data-lightbox="%data%" data-title="My caption"><img src="%data%" width="107" height="75"></a>';
+var HTMLprojectImage = '<a href="%data%" data-lightbox="%data%" data-title="%caption%"><img src="%data%" width="107" height="75"></a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#"> %data%';
@@ -166,8 +166,7 @@ function initializeMap() {
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
-// Vanilla JS way to listen for resizing of the window
-// and adjust map bounds
+// listen for resizing of the window and adjust map bounds
 window.addEventListener('resize', function(e) {
   map.fitBounds(mapBounds);
 });

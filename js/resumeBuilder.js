@@ -9,7 +9,7 @@ var bio = {
         "github": "0Danimal0",
         "location": "Scottsdale, Az"
     },
-    "welcomeMessage": "Tageting an Entry-Level position in web development.",
+    "welcomeMessage": "Strong work ethic, lifelong learner, driven for success, and great teammate.",
     "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
     "bioPic": "images/handball.jpg"
 }
@@ -76,30 +76,61 @@ var projects = {
         "description": "Tasked with designing much of the content management system used by the research team to populate \
                         information on commercial real estate assets. Each property, title event, and event actor required \
                         unique information architecture, yet speed and ease of use were essential business requirements.",
-        "images": ["images/cms_base.jpg", "images/cms_contact_db.jpg"],
+        "images": ["images/cms_base.jpg"],
         "link": "https://vizzda.com/",
+        "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
     }, {
         "title": "Vizzda Customer End Product",
         "dates": "2015",
-        "description": "User advocate on design team of a mapping interface that filtered real estate content. Specialized \
-                        in translating researched data assets into information stories to help achieve customer goal of \
+        "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
+                        in shaping information archicture that tells stories about real estate to help achieve customer goal of \
                         discovering comparable properties to validate property pricing targets. ",
-        "images": ["images/map_full.jpg", "images/map_filter.jpg", "images/dailyFeed-Land.jpg"],
+        "images": ["images/map_full.jpg", "images/map_filter.jpg", "images/dailyFeed.jpg"],
         "link": "https://vizzda.com/",
-    }, {
+        "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
+    },  {
         "title": "Arcade Game: Udacity Project",
         "dates": "2016",
-        "description": "Intoduction to Javascipt & HTML5 Canvas to make a frogger like 2d video game.",
+        "description": "The third project of the Udacity FEND program. This was an intoduction to Javascipt\
+                      & HTML5 Canvas. This provided initial exposure to object-oriented Javascript. The instructors \
+                      provided a game engine, while student were tasked with writing the image loading functionality to \
+                      dsiaply a 2D tile-based arcade game loosely based on Frogger.",
         "images": ["images/arcade_game.jpg"],
         "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
-    }, {
+        "caption": [""]
+    },  {
+        "title": "Website Optimization Project (unfinished)",
+        "dates": "2016",
+        "description": "The fourth project for the Udacity Front End Nanodegree program. This project required taking an existing \
+                        website and optimizing it using Google's Pagespeed Insights and also make the loading time faster than 60fps. \
+                        Additionally, it provided exposure to manipulating Node.js with Grunt to minimize CSS and also compressed the \
+                        image sizes to make the site load faster.",
+        "images": ["images/web_performance.jpg"],
+        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+        "caption": [""]
+    },  {
         "title": "Neighborhood Map: Udacity Project",
         "dates": "2016",
-        "description": "Utilize knockout.js to build a neighbood map using the Google Map API,\
-                       and maintain Model–View–Viewmodel development patter.",
+        "description": "The fifth project for the Udacity FEND program. In this project I’m developing a\
+                        web app that displays my favorite locations around my hometown of Traverse City, \
+                        Mi. In this project, the goal is to create a webapp using Google Maps API to \
+                        create a map displaying five locations of interest, along with a list-view \
+                        (using knockout.js), a search filter, and the use of a third party API. An aspect \
+                        of this lesson was the MVVM development organization structure.",
         "images": ["images/map_app_shot.jpg"],
         "link": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
-    }
+        "caption": [""]
+    },  {
+        "title": "Application Testing: Udacity Project",
+        "dates": "2016",
+        "description": "The sixth and last project for the Udacity Front End Nanodegree program. This exercise uses \
+                        Jasmine to write tests against an existing RSS feed application. The \
+                        tests ensured the functionality of the underlying business logic of the application \
+                        as well as the event handling and DOM manipulation.",
+        "images": ["images/testing.jpg"],
+        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+        "caption": [""]
+      }
   ]
 }
 
@@ -110,9 +141,9 @@ var projects = {
 
 //header//
 var displayHeader = function() {
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role))
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-}
+};
 displayHeader();
 
 
@@ -121,7 +152,7 @@ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedBioPic);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcomeMsg);
-}
+};
 displayBioPic();
 
 
@@ -137,7 +168,7 @@ bio.display = function() {
         var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
         $("#topContacts").append(formattedLocation);
     }
-}
+};
 bio.display();
 
 bio.displayContactsFooter = function() {
@@ -149,7 +180,7 @@ bio.displayContactsFooter = function() {
         var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
         $("#footerContacts").append(formattedLocation);
     }
-}
+};
 bio.displayContactsFooter();
 
 
@@ -219,9 +250,10 @@ projects.display = function() {
 
         if (projects.projects[project].images.length > 0) {
           $(".project-entry:last").append(HTMLprojectImageContainerOpen);
-            for (image in projects.projects[project].images) {
-                var formattedImage = HTMLprojectImage.replace(/%data%/g, projects.projects[project].images[image])
-                $(".row-lightbox:last").append(formattedImage);
+            for (index in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace(/%data%/g, projects.projects[project].images[index]);
+                var formattedImageCaption = formattedImage.replace("%caption%", projects.projects[project].caption[index]);
+                $(".row-lightbox:last").append(formattedImageCaption);
             }
         }
     }
