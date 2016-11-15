@@ -71,21 +71,21 @@ var work = {
 
 var projects = {
     "projects": [{
-        "title": "Vizzda Content Management: Research & Redesign",
+        "title": "Vizzda Content Management UX",
         "dates": "2014-2015",
-        "description": "Tasked with designing much of the content management system used by the research team to populate \
-                        information on commercial real estate assets. Each property, title event, and event actor required \
-                        unique information architecture, yet speed and ease of use were essential business requirements.",
+        "description": "Tasked with designing much of the content management system used by the research team to populate a database \
+                        of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
+                        of use and speed through form completion were essential business requirements.",
         "images": ["images/cms_base.jpg"],
         "link": "https://vizzda.com/",
         "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
     }, {
-        "title": "Vizzda Customer End Product",
+        "title": "Vizzda Customer End Product UX",
         "dates": "2015",
         "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
-                        in shaping information archicture that tells stories about real estate to help achieve customer goal of \
-                        discovering comparable properties to validate property pricing targets. ",
-        "images": ["images/map_full.jpg", "images/map_filter.jpg", "images/dailyFeed.jpg"],
+                        in shaping information architecture that tells stories about real estate to help an array of unique customers \
+                        each achieve their respective user goals.",
+        "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
         "link": "https://vizzda.com/",
         "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
     },  {
