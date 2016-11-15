@@ -132,6 +132,10 @@ a {
   padding-top: 20px
 }
 
+.white {
+  background-color: #fff;
+}
+
 .dark-gray {
   background-color: #2c2c2c;
 }
