@@ -11,7 +11,7 @@ var bio = {
     },
     "welcomeMessage": "Strong work ethic, lifelong learner, driven for success, and great teammate.",
     "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
-    "biopic": "images/handball.jpg"
+    "biopic": "images/fulldizerender.jpg"
 };
 
 var education = {
