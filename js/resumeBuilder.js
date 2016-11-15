@@ -106,7 +106,7 @@ var projects = {
                         Additionally, it provided exposure to manipulating Node.js with Grunt to minimize CSS and also compressed the \
                         image sizes to make the site load faster.",
         "images": ["images/web_performance.jpg"],
-        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+        "link": "0danimal0.github.io",
         "caption": [""]
     },  {
         "title": "Neighborhood Map: Udacity Project",
@@ -128,7 +128,7 @@ var projects = {
                         tests ensured the functionality of the underlying business logic of the application \
                         as well as the event handling and DOM manipulation.",
         "images": ["images/testing.jpg"],
-        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+        "link": "https://github.com/0Danimal0/ApplicationTesting-Udacity",
         "caption": [""]
       }
   ]
