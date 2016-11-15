@@ -12,7 +12,7 @@ var bio = {
     "welcomeMessage": "Strong work ethic, lifelong learner, driven for success, and great teammate.",
     "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
     "biopic": "images/handball.jpg"
-}
+};
 
 var education = {
     "schools": [{
@@ -23,15 +23,15 @@ var education = {
         "majors": ["Urban Planning, focus on design & community engagement"],
         "url": "https://geoplan.asu.edu/degree-programs/undergraduate-degrees/urban-planning"
     }],
-    "onlineCourses": {
+    "onlineCourses": [{
         "title": "Front End Developer Nanodegree",
         "school": "Udacity",
         "dates": "April to July, 2016 ",
         "description": "Broad introduction to modern front end developer languages and tools. Education includes experience with HTML5, CSS, JavaScript, Python, Git / GitHub, AJAX, Google APIs, Responsive Design, \
                         Grunt, HTML Canvas, website performance optimization, browser rendering optimization, and much more. ",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    }
-}
+    }]
+};
 
 
 var work = {
@@ -66,7 +66,7 @@ var work = {
                         Point, Michigan. It was working with his crew of four highly skilled tradesman that I found an \
                         affinity for focusing on small tasks in order to execute on large projects."
     }]
-}
+};
 
 
 var projects = {
@@ -77,7 +77,7 @@ var projects = {
                         of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
                         of use and speed through form completion were essential business requirements.",
         "images": ["images/cms_base.jpg"],
-        "link": "https://vizzda.com/",
+        "url": "https://vizzda.com/",
         "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
     }, {
         "title": "Vizzda Customer End Product UX",
@@ -86,7 +86,7 @@ var projects = {
                         in shaping information architecture that tells stories about real estate to help an array of unique customers \
                         each achieve their respective user goals.",
         "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
-        "link": "https://vizzda.com/",
+        "url": "https://vizzda.com/",
         "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
     },  {
         "title": "Arcade Game: Udacity Project",
@@ -96,7 +96,7 @@ var projects = {
                       provided a game engine, while student were tasked with writing the image loading functionality to \
                       dsiaply a 2D tile-based arcade game loosely based on Frogger.",
         "images": ["images/arcade_game.jpg"],
-        "link": "https://github.com/0Danimal0/Udacity-Arcade-Game",
+        "url": "https://github.com/0Danimal0/Udacity-Arcade-Game",
         "caption": [""]
     },  {
         "title": "Website Optimization Project (unfinished)",
@@ -106,7 +106,7 @@ var projects = {
                         Additionally, it provided exposure to manipulating Node.js with Grunt to minimize CSS and also compressed the \
                         image sizes to make the site load faster.",
         "images": ["images/web_performance.jpg"],
-        "link": "0danimal0.github.io",
+        "url": "0danimal0.github.io",
         "caption": [""]
     },  {
         "title": "Neighborhood Map: Udacity Project",
@@ -118,7 +118,7 @@ var projects = {
                         (using knockout.js), a search filter, and the use of a third party API. An aspect \
                         of this lesson was the MVVM development organization structure.",
         "images": ["images/map_app_shot.jpg"],
-        "link": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
+        "url": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
         "caption": [""]
     },  {
         "title": "Application Testing: Udacity Project",
@@ -128,11 +128,11 @@ var projects = {
                         tests ensured the functionality of the underlying business logic of the application \
                         as well as the event handling and DOM manipulation.",
         "images": ["images/testing.jpg"],
-        "link": "https://github.com/0Danimal0/ApplicationTesting-Udacity",
+        "url": "https://github.com/0Danimal0/ApplicationTesting-Udacity",
         "caption": [""]
       }
   ]
-}
+};
 
 
 ////////////////////////////////////////////////
@@ -150,21 +150,18 @@ bio.display = function() {
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").append(formattedWelcomeMsg);
     if (bio.contacts) {
-        //Display contact info.
+        //Display contact info at header and footer.
         var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
         $("#topContacts").append(formattedEmail);
-        var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
-        var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-        $("#topContacts").append(formattedGithub);
-        var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
-        $("#topContacts").append(formattedLocation);
-        //Display footer
-        var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
         $("#footerContacts").append(formattedEmail);
         var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+        $("#topContacts").append(formattedMobile);
         $("#footerContacts").append(formattedMobile);
+        var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
+        $("#topContacts").append(formattedGithub);
+        $("#footerContacts").append(formattedGithub);
         var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
+        $("#topContacts").append(formattedLocation);
         $("#footerContacts").append(formattedLocation);
     }
     if (bio.skills) {
@@ -212,7 +209,7 @@ projects.display = function() {
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
-        var formattedTitleLink = formattedTitle.replace("#", project.link);
+        var formattedTitleLink = formattedTitle.replace("#", project.url);
         $(".project-entry:last").append(formattedTitleLink);
 
         var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
@@ -254,23 +251,23 @@ education.display = function() {
     var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
     $(".education-entry:last").append(formattedSchoolMajor);
   });
-  if (education.onlineCourses != 0) {
-    $("#education").append(HTMLonlineClasses);
-    $("#education").append(HTMLonlineStart);
+  education.onlineCourses.forEach(function(course) {
+      $("#education").append(HTMLonlineClasses);
+      $("#education").append(HTMLonlineStart);
 
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses.title);
-        var formattedOnlineTitleLink = formattedOnlineTitle.replace("#", education.onlineCourses.url);
-        $(".onlineEd-entry:last").append(formattedOnlineTitleLink);
+      var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
+      var formattedOnlineTitleLink = formattedOnlineTitle.replace("#", course.url);
+      $(".onlineEd-entry:last").append(formattedOnlineTitleLink);
 
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
-        $(".onlineEd-entry:last").append(formattedOnlineSchool);
+      var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
+      $(".onlineEd-entry:last").append(formattedOnlineSchool);
 
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
-        $(".onlineEd-entry:last").append(formattedOnlineDates);
+      var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.dates);
+      $(".onlineEd-entry:last").append(formattedOnlineDates);
 
-        var formattedOnlineDescription = HTMLonlineDesciption.replace("%data%", education.onlineCourses.description);
-        $(".onlineEd-entry:last").append(formattedOnlineDescription);
-  };
+      var formattedOnlineDescription = HTMLonlineDesciption.replace("%data%", course.description);
+      $(".onlineEd-entry:last").append(formattedOnlineDescription);
+  });
 }
 education.display();
 
