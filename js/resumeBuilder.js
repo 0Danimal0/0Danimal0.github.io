@@ -45,7 +45,8 @@ var work = {
                         Responsibilities included customer service director, data fascilitation, information design, social media \
                         graphic designer, and user advocate on the product design team. Main responsibility as \
                         customer manager honed my sentivity for the users interaction with site design, information \
-                        architecture, data element utility."
+                        architecture, data element utility. -- Exposure to UX research & design, agile Scrum methodologies, Lean UX & Start-Up,\
+                        public speaking, quality assurance, and continuously learning new technologies while working through projects."
     }, {
         "employer": "Levine Machine Development",
         "webSite": "http://levinemachine.com/",
@@ -71,24 +72,6 @@ var work = {
 
 var projects = {
     "projects": [{
-        "title": "Vizzda Content Management UX",
-        "dates": "2014-2015",
-        "description": "Tasked with designing much of the content management system used by the research team to populate a database \
-                        of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
-                        of use and speed through form completion were essential business requirements.",
-        "images": ["images/cms_base.jpg"],
-        "url": "https://vizzda.com/",
-        "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
-    }, {
-        "title": "Vizzda Customer End Product UX",
-        "dates": "2015",
-        "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
-                        in shaping information architecture that tells stories about real estate to help an array of unique customers \
-                        each achieve their respective user goals.",
-        "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
-        "url": "https://vizzda.com/",
-        "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
-    },  {
         "title": "Arcade Game: Udacity Project",
         "dates": "2016",
         "description": "The third project of the Udacity FEND program. This was an intoduction to Javascipt\
@@ -130,7 +113,25 @@ var projects = {
         "images": ["images/testing.jpg"],
         "url": "https://github.com/0Danimal0/ApplicationTesting-Udacity",
         "caption": [""]
-      }
+      },{
+          "title": "Vizzda Customer End Product UX",
+          "dates": "2015",
+          "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
+                          in shaping information architecture that tells stories about real estate to help an array of unique customers \
+                          each achieve their respective user goals.",
+          "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
+          "url": "https://vizzda.com/",
+          "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
+      },{
+          "title": "Vizzda Content Management UX",
+          "dates": "2014-2015",
+          "description": "Tasked with designing much of the content management system used by the research team to populate a database \
+                          of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
+                          of use and speed through form completion were essential business requirements.",
+          "images": ["images/cms_base.jpg"],
+          "url": "https://vizzda.com/",
+          "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
+      } 
   ]
 };
 
