@@ -11,7 +11,7 @@ var bio = {
     },
     "welcomeMessage": "Strong work ethic, lifelong learner, driven for success, and great teammate.",
     "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
-    "biopic": "images/fulldizerender.jpg"
+    "biopic": "images/danheadshot.jpg"
 };
 
 var education = {
@@ -131,7 +131,7 @@ var projects = {
           "images": ["images/cms_base.jpg"],
           "url": "https://vizzda.com/",
           "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
-      } 
+      }
   ]
 };
 
