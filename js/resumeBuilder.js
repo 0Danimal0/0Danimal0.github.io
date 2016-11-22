@@ -77,14 +77,14 @@ var projects = {
         "description": "The third project of the Udacity FEND program. This was an intoduction to Javascipt\
                       & HTML5 Canvas. This provided initial exposure to object-oriented Javascript. The instructors \
                       provided a game engine, while student were tasked with writing the image loading functionality to \
-                      dsiaply a 2D tile-based arcade game loosely based on Frogger.",
+                      display a 2D tile-based arcade game loosely based on Frogger.",
         "images": ["images/arcade_game.jpg"],
         "url": "https://github.com/0Danimal0/Udacity-Arcade-Game",
         "caption": [""]
     },  {
         "title": "Website Optimization Project (unfinished)",
         "dates": "2016",
-        "description": "The fourth project for the Udacity Front End Nanodegree program. This project required taking an existing \
+        "description": "The fourth project for the Udacity Front End Nanodegree program. This project requires taking an existing \
                         website and optimizing it using Google's Pagespeed Insights and also make the loading time faster than 60fps. \
                         Additionally, it provided exposure to manipulating Node.js with Grunt to minimize CSS and also compressed the \
                         image sizes to make the site load faster.",
