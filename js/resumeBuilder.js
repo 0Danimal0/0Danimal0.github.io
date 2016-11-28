@@ -72,7 +72,7 @@ var work = {
 
 var projects = {
     "projects": [{
-        "title": "Arcade Game: Udacity Project",
+        "title": "Arcade Game: Udacity Projec",
         "dates": "2016",
         "description": "The third project of the Udacity FEND program. This was an intoduction to Javascipt\
                       & HTML5 Canvas. This provided initial exposure to object-oriented Javascript. The instructors \
@@ -94,14 +94,10 @@ var projects = {
     },  {
         "title": "Neighborhood Map: Udacity Project",
         "dates": "2016",
-        "description": "The fifth project for the Udacity FEND program. In this project I’m developing a\
-                        web app that displays my favorite locations around my hometown of Traverse City, \
-                        Mi. In this project, the goal is to create a webapp using Google Maps API to \
-                        create a map displaying five locations of interest, along with a list-view \
-                        (using knockout.js), a search filter, and the use of a third party API. An aspect \
-                        of this lesson was the MVVM development organization structure.",
+        "description": "The fifth project for the Udacity FEND program. The goal is to create a Google Maps API webapp using knockout.js\
+                        declarative bindings and display information from a third party API (I used Yelp).",
         "images": ["images/map_app_shot.jpg"],
-        "url": "https://github.com/0Danimal0/Neighborhood-Map_Udacity-Project",
+        "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
         "caption": [""]
     },  {
         "title": "Application Testing: Udacity Project",
