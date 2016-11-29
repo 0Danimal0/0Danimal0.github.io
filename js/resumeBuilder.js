@@ -72,26 +72,24 @@ var work = {
 
 var projects = {
     "projects": [{
-        "title": "Arcade Game: Udacity Projec",
-        "dates": "2016",
-        "description": "The third project of the Udacity FEND program. This was an intoduction to Javascipt\
-                      & HTML5 Canvas. This provided initial exposure to object-oriented Javascript. The instructors \
-                      provided a game engine, while student were tasked with writing the image loading functionality to \
-                      display a 2D tile-based arcade game loosely based on Frogger.",
-        "images": ["images/arcade_game.jpg"],
-        "url": "https://github.com/0Danimal0/Udacity-Arcade-Game",
-        "caption": [""]
-    },  {
-        "title": "Website Optimization Project (unfinished)",
-        "dates": "2016",
-        "description": "The fourth project for the Udacity Front End Nanodegree program. This project requires taking an existing \
-                        website and optimizing it using Google's Pagespeed Insights and also make the loading time faster than 60fps. \
-                        Additionally, it provided exposure to manipulating Node.js with Grunt to minimize CSS and also compressed the \
-                        image sizes to make the site load faster.",
-        "images": ["images/web_performance.jpg"],
-        "url": "0danimal0.github.io",
-        "caption": [""]
-    },  {
+        "title": "Vizzda Customer End Product UX",
+        "dates": "2015",
+        "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
+                        in shaping information architecture that tells stories about real estate to help an array of unique customers \
+                        each achieve their respective user goals.",
+        "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
+        "url": "https://vizzda.com/",
+        "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
+    },{
+        "title": "Vizzda Content Management UX",
+        "dates": "2014-2015",
+        "description": "Tasked with designing much of the content management system used by the research team to populate a database \
+                        of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
+                        of use and speed through form completion were essential business requirements.",
+        "images": ["images/cms_base.jpg"],
+        "url": "https://vizzda.com/",
+        "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
+    }, {
         "title": "Neighborhood Map: Udacity Project",
         "dates": "2016",
         "description": "The fifth project for the Udacity FEND program. The goal is to create a Google Maps API webapp using knockout.js\
@@ -101,35 +99,7 @@ var projects = {
         "images": ["images/drawer_closed.jpg", "images/drawer_open.jpg", "images/drawer_filter.jpg"],
         "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
         "caption": ["Filter drawer is closed in this picture.", "Filter drawer is open in the picture.", "Filter drawer is open and filtering is in action."]
-    },  {
-        "title": "Application Testing: Udacity Project",
-        "dates": "2016",
-        "description": "The sixth and last project for the Udacity Front End Nanodegree program. This exercise uses \
-                        Jasmine to write tests against an existing RSS feed application. The \
-                        tests ensured the functionality of the underlying business logic of the application \
-                        as well as the event handling and DOM manipulation.",
-        "images": ["images/testing.jpg"],
-        "url": "https://github.com/0Danimal0/ApplicationTesting-Udacity",
-        "caption": [""]
-      },{
-          "title": "Vizzda Customer End Product UX",
-          "dates": "2015",
-          "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
-                          in shaping information architecture that tells stories about real estate to help an array of unique customers \
-                          each achieve their respective user goals.",
-          "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
-          "url": "https://vizzda.com/",
-          "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
-      },{
-          "title": "Vizzda Content Management UX",
-          "dates": "2014-2015",
-          "description": "Tasked with designing much of the content management system used by the research team to populate a database \
-                          of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
-                          of use and speed through form completion were essential business requirements.",
-          "images": ["images/cms_base.jpg"],
-          "url": "https://vizzda.com/",
-          "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
-      }
+    }
   ]
 };
 
