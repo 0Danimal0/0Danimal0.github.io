@@ -95,10 +95,12 @@ var projects = {
         "title": "Neighborhood Map: Udacity Project",
         "dates": "2016",
         "description": "The fifth project for the Udacity FEND program. The goal is to create a Google Maps API webapp using knockout.js\
-                        declarative bindings and display information from a third party API (I used Yelp).",
-        "images": ["images/map_app_shot.jpg"],
+                         and display information from a third party API; I used Yelp). The packages I utilized include knockout.js for \
+                         declarative bindings, Bootstrap, jQuery, and a Oauth-Signature generator by bettiolo. This project is built mobile\
+                         first.",
+        "images": ["images/drawer_closed.jpg", "images/drawer_open.jpg", "images/drawer_filter.jpg"],
         "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
-        "caption": [""]
+        "caption": ["Filter drawer is closed in this picture.", "Filter drawer is open in the picture.", "Filter drawer is open and filtering is in action."]
     },  {
         "title": "Application Testing: Udacity Project",
         "dates": "2016",
