@@ -10,7 +10,7 @@ var bio = {
         "location": "Scottsdale, Az"
     },
     "welcomeMessage": "Strong work ethic, lifelong learner, driven for success, and great teammate.",
-    "skills": ["Javascript", "JQuery", "HTML5", "CSS", "GIT", "AJAX", "knockout.js","UX Experience"],
+    "skills": ["JS/HTML/CSS", "JQuery", "Bootstrap", "GIT", "AJAX", "Backbone.js", "knockout.js", "UX Experience"],
     "biopic": "images/danheadshot.jpg"
 };
 
