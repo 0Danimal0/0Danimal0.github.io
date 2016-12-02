@@ -47,58 +47,53 @@ var work = {
                         customer manager honed my sentivity for the users interaction with site design, information \
                         architecture, data element utility. -- Exposure to UX research & design, agile Scrum methodologies, Lean UX & Start-Up,\
                         public speaking, quality assurance, and continuously learning new technologies while working through projects."
-    }, {
-        "employer": "Levine Machine Development",
-        "webSite": "http://levinemachine.com/",
-        "title": "Research Intern",
-        "dates": "3.5 months",
-        "location": "605 E Grant St, Phoenix, AZ 85004",
-        "description": "Michael Levine of Levine Machine Development is a developer & conservationist of historic \
-                        building in downtown Phoenix. I managed his research into economic development \
-                        financial devices in regards to case-law. This experience gave me an awareness for and strong \
-                        opinions of interface design for information search through using online government data tools."
-    }, {
-        "employer": "MT Chargot Building Company",
-        "webSite": "http://www.mtchargotbuilding.com/",
-        "title": "Finish Carpenter",
-        "dates": "3 years, seasonally",
-        "location": "22510 Hoover Rd, Warren, MI 48089",
-        "description": "Mark Chargot is a finish carpenter that practices his craft in historic neighborhood of Grosse \
-                        Point, Michigan. It was working with his crew of four highly skilled tradesman that I found an \
-                        affinity for focusing on small tasks in order to execute on large projects."
     }]
 };
 
 
 var projects = {
     "projects": [{
-        "title": "Vizzda Customer End Product UX",
-        "dates": "2015",
-        "description": "Usability specialist on design team for a mapping interface that filtered real estate content. Specialized \
-                        in shaping information architecture that tells stories about real estate to help an array of unique customers \
-                        each achieve their respective user goals.",
-        "images": ["images/map_full.jpg", "images/propertyPage.jpg", "images/dailyFeed.jpg"],
-        "url": "https://vizzda.com/",
-        "caption": ["This is the Vizzda home map that is used to visualize the entire database for real estate brokers.", "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers.", "This is the Vizzda live propecting list that is sold to commercial real estate vendors."]
+        "title": "Vizzda, Version 3",
+        "dates": "2014-15",
+        "description": "Usability specialist on UX design team. Delivered information architecture, visual design, and user research \
+                        to create a SaaS mapping interface for a company that produces the most accurate and timely commercial real estate data possible.",
+        "images": [{"image": "images/dailyFeed.jpg", "caption": "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers."},
+                  {"image": "images/propertyPage.jpg", "caption": "Individual property details page that reflect respecitve property type, events, and stakeholders."}
+                  ],
+        "url": "https://vizzda.com/"
     },{
-        "title": "Vizzda Content Management UX",
-        "dates": "2014-2015",
-        "description": "Tasked with designing much of the content management system used by the research team to populate a database \
-                        of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
-                        of use and speed through form completion were essential business requirements.",
-        "images": ["images/cms_base.jpg"],
-        "url": "https://vizzda.com/",
-        "caption": ["This is the initial page of the content management system. All of the tabs additional forms can be seen."]
-    }, {
+        "title": "Social Media Template Design",
+        "dates": "2015-2016",
+        "description": "As we expanded into the Miami market in 2015, I took charge of the social media efforts by designing templates for future automation\
+                        as well as drafting the conetent strategy for each media platform. Our marketing campaign used blogs, Infusionsoft emails, and all major social\
+                        outlets.",
+        "images": [
+            {"image": "images/grandcanyon.jpg", "caption": "Social media content."},
+            {"image": "images/proposedlots.jpg",  "caption": "Social media content."},
+            {"image": "images/derito.jpg",  "caption": "Infusionsoft email campaign."}
+          ],
+        "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
+    },{
         "title": "Neighborhood Map: Udacity Project",
         "dates": "2016",
         "description": "The fifth project for the Udacity FEND program. The goal is to create a Google Maps API webapp using knockout.js\
                          and display information from a third party API; I used Yelp). The packages I utilized include knockout.js for \
                          declarative bindings, Bootstrap, jQuery, and a Oauth-Signature generator by bettiolo. This project is built mobile\
                          first.",
-        "images": ["images/drawer_closed.jpg", "images/drawer_open.jpg", "images/drawer_filter.jpg"],
+        "images": [
+            {"image": "images/drawer_closed.jpg", "caption": "Filter drawer is closed in this picture."},
+            {"image": "images/drawer_open.jpg",  "caption": "Filter drawer is open in the picture."},
+            {"image": "images/drawer_filter.jpg",  "caption": "Filter drawer is open and filtering is in action."}
+          ],
         "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
-        "caption": ["Filter drawer is closed in this picture.", "Filter drawer is open in the picture.", "Filter drawer is open and filtering is in action."]
+    },  {
+        "title": "Vizzda Content Management UX",
+        "dates": "2014-2015",
+        "description": "Tasked with designing much of the content management system used by the research team to populate a database \
+                        of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
+                        of use and speed through form completion were essential business requirements.",
+        "images": [{"image": "images/cms_base.jpg", "caption": "This is the initial page of the content management system. All of the tabs additional forms can be seen."}],
+        "url": "https://vizzda.com/",
     }
   ]
 };
@@ -190,13 +185,17 @@ projects.display = function() {
         if (project.images.length > 0) {
           $(".project-entry:last").append(HTMLprojectImageContainerOpen);
             project.images.forEach(function(image) {
-                var formattedImage = HTMLprojectImage.replace(/%data%/g, image);
-                var formattedImageCaption = formattedImage.replace("%caption%", project.caption);
+                var formattedImage = HTMLprojectImage.replace(/%data%/g, image.image);
+                var formattedImageCaption = formattedImage.replace("%caption%", image.caption);
                 $(".row-lightbox:last").append(formattedImageCaption);
-            })
-        }
-    })
-}
+            });
+//            project.images.forEach(function(caption) {
+
+//            })
+          };
+        });
+      }
+
 projects.display();
 
 
