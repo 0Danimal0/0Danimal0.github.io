@@ -55,7 +55,7 @@ var projects = {
     "projects": [{
         "title": "Vizzda, Version 3",
         "dates": "2014-15",
-        "description": "Usability specialist on UX design team. Delivered information architecture, visual design, and user research \
+        "description": "Usability specialist on UX design team. Experience conducting user research and designing information architecture \
                         to create a SaaS mapping interface for a company that produces the most accurate and timely commercial real estate data possible.",
         "images": [{"image": "images/dailyFeed.jpg", "caption": "This is the Vizzda home map filter set that is used to visualize the entire database for real estate brokers."},
                   {"image": "images/propertyPage.jpg", "caption": "Individual property details page that reflect respecitve property type, events, and stakeholders."}
@@ -87,7 +87,7 @@ var projects = {
           ],
         "url": "https://github.com/0Danimal0/Traverse-City-Hotspot-Map",
     },  {
-        "title": "Vizzda Content Management UX",
+        "title": "Vizzda Data Entry Interface UX",
         "dates": "2014-2015",
         "description": "Tasked with designing much of the content management system used by the research team to populate a database \
                         of commercial real estate properties. Each input item in the CMS was uniquely researched. Optimizing user ease \
